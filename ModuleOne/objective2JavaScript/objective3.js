@@ -43,19 +43,49 @@ if (day="monday") {
 // Another thing to be aware of is that if any statement in the chain returns true, the rest of the chain will be skipped. 
 
 if (1+1===3) {
-  console.log("this will be skipped")
+  console.log("this will be skipped") //since 1+1 does not equal 3, this will be skipped
 } elseif (1+1===2) {
-  console.log("this code will be run")
+  console.log("this code will be run") // 1+1 does equal 2, so this code will run
 } elseif (1+1===2) {
-  console.log("this code will not run, despite also being true")
+  console.log("this code will not run, despite also being true") //This code will not run, because the elseif statement is prior to this statement, so this code is skipped.
 }
 
 // it is generally best to have non-redundant and readable code, so when possible, end your if statements with an else that acts as a default state. 
 
 if (1+1===3) {
-  console.log("this will be skipped")
+  console.log("this will be skipped") 
 } elseif(1+1===5) {
   console.log("this will also be skipped")
 } else {
-  console.log("this else statement code will run")
+  console.log("this else statement code will run") //because none of the other statements were true, this is the default state and ends the code block.
 }
+
+// Why use elseif? 
+
+//This is a valid question, but the answer can be displayed through exampled.
+
+const age=21
+if (age>20) {
+  console.log("older than 20!")
+} elseif (age>15) {
+  console.log("older than 15!")
+} else {
+  console.log("younger than 15!")
+}
+
+//compared to
+
+const age=21
+if (age>20) {
+  console.log("older than 20!")
+} 
+if (age>15) {
+  console.log("older than 15!")
+}
+if (age<=15) {
+  console.log("younger than 15!")
+}
+
+//in the above, the 2nd if statement would run. This may be what you want, but you can still get further functionality by bunching logical statements together
+
+
